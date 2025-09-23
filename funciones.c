@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include "cabecera.h"
 #include<SDL2/SDL.h>
-/*SDL_Color colores[]
+#include <SDL2/SDL_ttf.h>
+SDL_Color colores[] =
 {
      {0,   0,   0,   255}, // N[0] - Negro
     {255, 255, 0,   255}, // Y[1] - Amarillo
@@ -11,5 +12,5 @@
     {255,   0,  0,  255}, // R[4] - Rojo
     {0,   0,    0,    0}  // T[5] - Transparente
 };
-*/
+
 
