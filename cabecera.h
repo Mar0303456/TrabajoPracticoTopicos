@@ -1,9 +1,10 @@
 #ifndef CABECERA_H_INCLUDED
 #define CABECERA_H_INCLUDED
 
-
-#include<SDL2/SDL.h>
-
+#include <SDL2/SDL.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include<time.h>
 
 #define TAM_GRILLA 6
 #define PX_PADDING 4

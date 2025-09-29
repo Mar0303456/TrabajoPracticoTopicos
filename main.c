@@ -6,45 +6,14 @@ Apellido:Mogni Santiago
 DNI: 43718566
 Entrega: Si
 Apellido:Veliz Marianella Geraldine
-DNI:
+DNI:43301267
 Entrega: Si
 */
 
-
-#include <stdio.h>
-#include <stdlib.h>
-#include<time.h>
 #include "cabecera.h"
-#include <SDL2/SDL.h>
-#include <SDL2/SDL_ttf.h>//Incluyo la biblioteca para poner texto
-/*typedef struct MenuI
-{
-    const char opcion[20];
-    int x;
-    int y;
-    MenuI *prev;
-    MenuI *next;
-
-}MenuI;*/
 
 
-// Matriz 12x12: corazón (R = rojo, T = transparente)
-/*
-const int corazon[12][12] = {
-    {T, T, R, R, T, T, T, T, R, R, T, T},
-    {T, R, R, R, R, T, T, R, R, R, R, T},
-    {R, R, R, R, R, R, R, R, R, R, R, R},
-    {R, R, R, R, R, R, R, R, R, R, R, R},
-    {T, R, R, R, R, R, R, R, R, R, R, T},
-    {T, T, R, R, R, R, R, R, R, R, T, T},
-    {T, T, T, R, R, R, R, R, R, T, T, T},
-    {T, T, T, T, R, R, R, R, T, T, T, T},
-    {T, T, T, T, T, R, R, T, T, T, T, T},
-    {T, T, T, T, T, R, R, T, T, T, T, T},
-    {T, T, T, T, T, T, T, T, T, T, T, T},
-    {T, T, T, T, T, T, T, T, T, T, T, T}
-};
-*/
+
 int main(int argc, char *argv[])
 {
 
@@ -64,26 +33,6 @@ int main(int argc, char *argv[])
                                TAM_GRILLA * TAM_PIXEL * PIXELES_X_LADO + TAM_GRILLA * PX_PADDING,
                                2);
 
-
-   /*
-   //entiendo que no deberia ir, porque con este while la ventana se queda esperando un evento, y nosotros no queremso tocar algo para que ahi recien me tire el menu,sino automaticamente apenas entras
-    while(contacto)
-    {
-        SDL_Event e;
-        if(SDL_WaitEvent(&e))
-        {
-            if(e.type == SDL_QUIT)
-            {
-                contacto = 0;
-            }
-        }
-    }
-    //SDL_DestroyWindow(ventana);
-    //SDL_Quit();*/
-
-
-   // SDL_CreateWindowAndRenderer(640, 480, 0, &ventana, &renderer);//creacion y renderizado de la ventana(tamaï¿½o q quiero que tenga la venatana)
-
     renderer = SDL_CreateRenderer(ventana,-1,SDL_RENDERER_ACCELERATED);//crea SOLAMENTE EL RENDERER
 
 
@@ -91,24 +40,8 @@ int main(int argc, char *argv[])
     SDL_RenderClear(renderer);//aca hago limpieza de la ventana
 
 
-   // SDL_CreateWindowAndRenderer(640, 480, 0, &ventana, &renderer);//creacion y renderizado de la ventana(tamaño q quiero que tenga la venatana)
 
 
-
-
-    TTF_Font *fuente = TTF_OpenFont("fuentes/arial.ttf", 72);//acá le pongo la ruta donde tengo la fuenwte que yo elegí
-    if (!fuente)
-    {
-    printf("Error al abrir fuente: %s\n", TTF_GetError());
-    return 1;
-    }
-/*
-    //SDL_SetRenderDrawColor(renderer,0,0,0,255);//acá le digo q quiero que empiece con la ventana total black
-    //SDL_RenderClear(renderer);//aca hago limpieza de la ventana
-
-    //SDL_SetRenderDrawColor(renderer,255,255,255,255);//con estos parametros le digo q quiero el color blanco
-    //SDL_RenderDrawPoint(renderer,640/2,480/2);//dibujo un punto en el centro de la pantalla ancho/2 y altura/2
-*/
       int corriendo = 1;
       while (corriendo==1)
       {
@@ -128,31 +61,14 @@ int main(int argc, char *argv[])
             }
 
 
-            // limpiar pantalla
-            SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-            SDL_RenderClear(renderer);
-
-            // dibujar texto
-            SDL_Surface *surfTexto = TTF_RenderText_Blended(fuente, "MENU", colores[2]);//dibuja el texto en "formato vector"
-            SDL_Texture *texTexto = SDL_CreateTextureFromSurface(renderer, surfTexto);
-            SDL_FreeSurface(surfTexto);
-
-
-            //destino indica dónde y de qué tamaño se va a dibujar la textura del texto “MENU”(posx,posy,ancho,alto)
-            SDL_Rect destino = {(tamanoAncho-300)/2, 150, 300, 100};
-            SDL_RenderCopy(renderer, texTexto, NULL, &destino);
-            SDL_DestroyTexture(texTexto);
-
-            // mostrar todo
-            SDL_RenderPresent(renderer);//muestra la ventana para que el usuario la pueda ver
      }
 
 
     // limpieza
-    TTF_CloseFont(fuente);
+
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(ventana);
-    TTF_Quit();
+
     SDL_Quit();
     return 0;
 }
