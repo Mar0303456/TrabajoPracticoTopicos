@@ -14,9 +14,9 @@
 				<Compiler>
 					<Add option="-g" />
 					<Add directory="../lib/SDL2-2.32.8/x86_64-w64-mingw32/include" />
-					<Add directory="../lib/SDL2-2.32.8/x86_64-w64-mingw32/include/SDL2" />
 					<Add directory="../lib/SDL2_mixer-2.8.1/x86_64-w64-mingw32/include" />
 					<Add directory="../lib/SDL2_ttf-devel-2.20.2-mingw.tar/SDL2_ttf-2.20.2/x86_64-w64-mingw32/include" />
+					<Add directory="../../../mogni/Desktop/SDL_TP/SDL2-2.32.8/x86_64-w64-mingw32/include/SDL2" />
 				</Compiler>
 				<Linker>
 					<Add option="-lmingw32" />
